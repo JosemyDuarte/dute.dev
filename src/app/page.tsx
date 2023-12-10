@@ -10,14 +10,14 @@ export default function Home() {
             href="https://dute.dev"
             target="_blank"
           >
-            Josemy's Website
+            Josemy&apos;s Website
           </a>
         </p>
       </div>
 
       <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
         <p className="relative z-10 text-6xl font-bold text-center">
-          <span className="text-white">Hello</span> 👋, <span className="text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-blue-500 dark:from-sky-900 dark:to-blue-900">I'm Josemy Duarte</span>
+          <span className="text-white">Hello</span> 👋, <span className="text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-blue-500 dark:from-sky-900 dark:to-blue-900">I&apos;m Josemy Duarte</span>
         </p>
       </div>
       <div className='flex justify-center items-center'>
@@ -81,7 +81,7 @@ export default function Home() {
             xmlns="http://www.w3.org/2000/svg"
             className="w-12 h-12 text-gray-500 transition-colors hover:text-gray-700 dark:hover:text-gray-300"
             viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path
               d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
             <polyline points="22,6 12,13 2,6" />
@@ -95,7 +95,7 @@ export default function Home() {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-12 h-12 text-gray-500 transition-colors hover:text-gray-700 dark:hover:text-gray-300"
-            fill="currentColor" stroke-width="1" stroke-linejoin="round"
+            fill="currentColor" strokeWidth="1" strokeLinejoin="round"
             viewBox="0 0 64 64">
             <path d="m55.707 11.293-10-10A1.115 1.115 0 0 0 45 1H9a1 1 0 0 0-1 1v60a1 1 0 0 0 1 1h46a1 1 0 0 0 1-1V12a1.092 1.092 0 0 0-.293-.707zM52.586 11H46V4.414zM10 61V3h34v9a1 1 0 0 0 1 1h9v48z" />
             <path d="M34 8h7a1 1 0 0 0 0-2h-7a1 1 0 0 0 0 2zM34 13h7a1 1 0 0 0 0-2h-7a1 1 0 0 0 0 2zM50 16H34a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2zM50 21H34a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2zM50 26H34a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2zM50 31H14a1 1 0 0 0 0 2h36a1 1 0 0 0 0-2zM50 36H14a1 1 0 0 0 0 2h36a1 1 0 0 0 0-2zM50 41H14a1 1 0 0 0 0 2h36a1 1 0 0 0 0-2zM50 46H14a1 1 0 0 0 0 2h36a1 1 0 0 0 0-2zM50 51H14a1 1 0 0 0 0 2h36a1 1 0 0 0 0-2zM50 56H14a1 1 0 0 0 0 2h36a1 1 0 0 0 0-2zM22 19a5 5 0 1 0-5-5 5.006 5.006 0 0 0 5 5zm0-8a3 3 0 1 1-3 3 3 3 0 0 1 3-3z" />
