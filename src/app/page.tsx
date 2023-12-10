@@ -3,8 +3,8 @@ import Script from 'next/script'
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-5F8D80LVMV" />
-      <Script id="google-analytics">
+      <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-5F8D80LVMV" />
+      <Script strategy="lazyOnload" id="google-analytics">
         {`
             window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
