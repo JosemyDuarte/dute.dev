@@ -13,8 +13,8 @@ export default function Home() {
           gtag('config', 'G-5F8D80LVMV');
           `}
       </Script>
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-2 pt-4 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+      <div className="z-10 items-center justify-between font-mono text-sm lg:flex">
+        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-2 pt-2 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           <a
             className="flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
             href="https://dute.dev"
@@ -41,6 +41,7 @@ export default function Home() {
       <div className="mb-32 flex items-center justify-center mt-8 space-x-4 lg:max-w-5xl lg:w-full lg:mb-0 lg:text-left">
         <a
           href="https://www.linkedin.com/in/josemyduarte/"
+          aria-label="LinkedIn"
           target="_blank"
           className="flex items-center justify-center w-12 h-12 text-gray-500 transition-colors hover:text-gray-700 dark:hover:text-gray-300"
         >
@@ -56,6 +57,7 @@ export default function Home() {
 
         <a
           href="https://github.com/JosemyDuarte"
+          aria-label="GitHub"
           target="_blank"
           className="flex items-center justify-center w-12 h-12 text-gray-500 transition-colors hover:text-gray-700 dark:hover:text-gray-300"
         >
@@ -72,6 +74,7 @@ export default function Home() {
         <a
           href="https://josemyduarte.github.io/"
           target="_blank"
+          aria-label='Personal Blog'
           className="flex items-center justify-center w-12 h-12 text-gray-500 transition-colors hover:text-gray-700 dark:hover:text-gray-300"
         >
           <svg xmlns="http://www.w3.org/2000/svg"
@@ -85,6 +88,7 @@ export default function Home() {
 
         <a
           href="mailto:me@dute.dev"
+          aria-label="Email"
           className="flex items-center justify-center w-12 h-12 text-gray-500 transition-colors hover:text-gray-700 dark:hover:text-gray-300"
         >
           <svg
@@ -100,6 +104,8 @@ export default function Home() {
 
         <a
           href="https://drive.google.com/file/d/1fqSuTNF9Ii-ImAOyJ-lrj3jQnpFMEH1S/view?usp=sharing"
+          target="_blank"
+          aria-label="Resume"
           className="flex items-center justify-center w-12 h-12 text-gray-500 transition-colors hover:text-gray-700 dark:hover:text-gray-300"
         >
           <svg
