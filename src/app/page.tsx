@@ -14,9 +14,9 @@ export default function Home() {
           `}
       </Script>
       <div className="z-10 items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-2 pt-2 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+        <p className="fixed left-0 top-0 flex w-full justify-center font-bold border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-2 pt-2 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           <a
-            className="flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
+            className="flex place-items-center gap-2 p-6 lg:pointer-events-auto lg:p-0"
             href="https://dute.dev"
             target="_blank"
           >
@@ -30,8 +30,8 @@ export default function Home() {
           <span className="text-white">Hello</span> 👋, <span className="text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-blue-500 dark:from-sky-900 dark:to-blue-900">I&apos;m Josemy Duarte</span>
         </p>
       </div>
-      <div className='flex justify-center items-center'>
-        <p className="relative z-10 text-2xl font-bold text-center">
+      <div className='flex justify-center items-center pb-8 pt-8'>
+        <p className="relative z-10 text-2xl text-center">
           <span className="text-transparent bg-clip-text bg-gradient-to-br text-white">
             Software Engineer, based on Barcelona, Spain.
           </span>
