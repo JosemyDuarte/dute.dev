@@ -36,7 +36,7 @@ export default function Home() {
           <span aria-label="waving hand" role="img">
             👋
           </span>
-          , I'm <span className="text-blue-900">Josemy Duarte</span>
+          , I&apos;m <span className="text-blue-900">Josemy Duarte</span>
         </h1>
         <p className="mt-4 text-xl">
           Software Engineer, based in Barcelona, Spain.
