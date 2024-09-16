@@ -1,0 +1,11 @@
+<script>
+    import Hero from "../components/Hero.svelte";
+</script>
+
+<main class="flex flex-col">
+    <Hero />
+    <!-- <Product /> -->
+    <!-- <Reviews /> -->
+    <!-- <FaQs /> -->
+    <!-- <Conversion /> -->
+</main>
