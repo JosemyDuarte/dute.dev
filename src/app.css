@@ -15,6 +15,7 @@ h2,
 h3,
 .poppins {
     font-family: 'Poppins', sans-serif;
+    font-display: swap;
 }
 
 span {
