@@ -8,7 +8,7 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-cloudflare": "^4.7.2",
+		"@sveltejs/adapter-auto": "^3.2.4",
 		"@sveltejs/kit": "^2.5.27",
 		"autoprefixer": "^10.4.16",
 		"postcss": "^8.4.32",
