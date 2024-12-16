@@ -42,5 +42,6 @@
 	},
 	"dependencies": {
 		"@tailwindcss/typography": "^0.5.15"
-	}
+	},
+	"packageManager": "yarn@4.5.3"
 }
