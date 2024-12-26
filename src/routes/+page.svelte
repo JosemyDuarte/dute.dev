@@ -4,8 +4,4 @@
 
 <main class="flex flex-col">
     <Hero />
-    <!-- <Product /> -->
-    <!-- <Reviews /> -->
-    <!-- <FaQs /> -->
-    <!-- <Conversion /> -->
 </main>
