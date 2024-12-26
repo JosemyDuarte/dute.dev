@@ -22,7 +22,7 @@
 		<p class="mx-auto w-full max-w-[1000px] text-center text-xl sm:text-2xl md:text-3xl">
 			I assist companies in creating <span class="font-semibold italic">scalable</span> and
 			<span class="font-semibold italic">reliable</span> cloud applications, ensuring service
-			stability through <span class="font-semibold italic">technical excellence</span>
+			stability through <span class="font-semibold italic">technical excellence</span>.
 		</p>
 		<CtAs />
 	</div>
