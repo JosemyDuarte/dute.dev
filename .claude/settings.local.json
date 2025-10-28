@@ -1,0 +1,7 @@
+{
+	"permissions": {
+		"allow": ["Bash(yarn check:*)", "Bash(npx svelte-check:*)", "Bash(yarn build)"],
+		"deny": [],
+		"ask": []
+	}
+}

@@ -69,11 +69,9 @@
 		<div class="relative space-y-20 md:space-y-28">
 			<!-- Animated background elements -->
 			<div class="absolute inset-0 -z-10 overflow-hidden">
+				<div class="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-blue-100/30 blur-3xl"></div>
 				<div
-					class="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-blue-100/30 blur-3xl"
-				></div>
-				<div
-					class="absolute right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-indigo-100/30 blur-3xl"
+					class="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-indigo-100/30 blur-3xl"
 				></div>
 			</div>
 
