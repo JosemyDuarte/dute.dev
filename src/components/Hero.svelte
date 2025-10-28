@@ -78,7 +78,7 @@
 			<!-- Project Cards -->
 			{#each projects as project, index}
 				<div
-					class="animate-slide-up opacity-0"
+					class="animate-slide-up"
 					style="animation-delay: {index * 150}ms; animation-fill-mode: forwards;"
 				>
 					<ProjectCard {project} {index} />
