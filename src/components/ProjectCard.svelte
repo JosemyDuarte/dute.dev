@@ -15,12 +15,12 @@
 <div
 	class="group relative flex {emojiOnLeft
 		? 'flex-col md:flex-row'
-		: 'flex-col-reverse md:flex-row'} items-center gap-8 md:gap-12"
+		: 'flex-col-reverse md:flex-row'} items-center gap-6 md:gap-12"
 >
 	<!-- Emoji Icon -->
 	{#if emojiOnLeft}
 		<div
-			class="flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 text-5xl shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl md:h-32 md:w-32 md:text-6xl"
+			class="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 text-4xl shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl sm:h-24 sm:w-24 sm:text-5xl md:h-32 md:w-32 md:text-6xl"
 		>
 			{project.emoji}
 		</div>
@@ -31,7 +31,7 @@
 		href={project.url}
 		target="_blank"
 		rel="noopener noreferrer"
-		class="relative w-full overflow-hidden rounded-2xl border border-gray-200/50 bg-gradient-to-br from-white to-gray-50/50 p-8 shadow-lg backdrop-blur-sm transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl md:w-2/3"
+		class="relative w-full overflow-hidden rounded-2xl border border-gray-200/50 bg-gradient-to-br from-white to-gray-50/50 p-6 shadow-lg backdrop-blur-sm transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl sm:p-8 md:w-2/3"
 	>
 		<!-- Animated gradient overlay -->
 		<div
@@ -88,7 +88,7 @@
 	<!-- Emoji Icon (right side) -->
 	{#if !emojiOnLeft}
 		<div
-			class="flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 text-5xl shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl md:h-32 md:w-32 md:text-6xl"
+			class="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 text-4xl shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl sm:h-24 sm:w-24 sm:text-5xl md:h-32 md:w-32 md:text-6xl"
 		>
 			{project.emoji}
 		</div>
