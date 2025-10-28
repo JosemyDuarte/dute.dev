@@ -79,7 +79,12 @@
 
 			<!-- Project Cards -->
 			{#each projects as project, index}
-				<ProjectCard {project} {index} />
+				<div
+					class="animate-slide-up opacity-0"
+					style="animation-delay: {index * 150}ms; animation-fill-mode: forwards;"
+				>
+					<ProjectCard {project} {index} />
+				</div>
 			{/each}
 		</div>
 	</div>
