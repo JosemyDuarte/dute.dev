@@ -92,6 +92,24 @@ button:focus-visible {
 	}
 }
 
+/* Skip to content link - visually hidden until focused */
+.skip-to-content {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	background: #0834c4;
+	color: white;
+	padding: 8px 16px;
+	text-decoration: none;
+	border-radius: 0 0 4px 0;
+	z-index: 100;
+	transition: top 0.2s ease-in-out;
+}
+
+.skip-to-content:focus {
+	top: 0;
+}
+
 .hero {
 	position: relative;
 }
