@@ -1,9 +1,5 @@
 import { describe, it, expect } from 'vitest';
-
-// Pure function to test
-function calculateEmojiPosition(index: number): boolean {
-	return index % 2 === 0;
-}
+import { calculateEmojiPosition } from '$lib/utils/projectCard';
 
 describe('ProjectCard emoji positioning logic', () => {
 	it('should place emoji on left for even indices', () => {
