@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '../app.css';
 	import Header from '../components/Header.svelte';
 
@@ -6,8 +6,8 @@
 
 	export const prerender = true;
 
-	let y;
-	$: outerHeight = 0;
+	let y: number = 0;
+	let outerHeight: number = 0;
 </script>
 
 {#if $openModal}
