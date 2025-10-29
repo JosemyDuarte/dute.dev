@@ -110,6 +110,28 @@ button:focus-visible {
 	top: 0;
 }
 
+/* Enhanced focus-visible styles for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+	outline: 3px solid #0834c4;
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
+/* Remove default outline and only show on keyboard focus */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+	outline: none;
+}
+
+/* Specific focus styles for interactive elements */
+.button:focus-visible,
+.specialBtn:focus-visible,
+.specialBtnDark:focus-visible {
+	outline: 3px solid #0834c4;
+	outline-offset: 2px;
+}
+
 .hero {
 	position: relative;
 }
