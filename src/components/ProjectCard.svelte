@@ -31,6 +31,7 @@
 		href={project.url}
 		target="_blank"
 		rel="noopener noreferrer"
+		aria-label="View {project.title} project - {project.description}"
 		class="relative w-full overflow-hidden rounded-2xl border border-gray-200/50 bg-gradient-to-br from-white to-gray-50/50 p-6 shadow-lg backdrop-blur-sm transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl sm:p-8 md:w-2/3"
 	>
 		<!-- Animated gradient overlay -->
