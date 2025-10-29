@@ -8,8 +8,12 @@
 
 	let { project, index }: Props = $props();
 
-	// Determine if emoji should be on left or right based on index
-	const emojiOnLeft = index % 2 === 0;
+	// Extract to named function for testability
+	export function calculateEmojiPosition(index: number): boolean {
+		return index % 2 === 0;
+	}
+
+	const emojiOnLeft = calculateEmojiPosition(index);
 </script>
 
 <div
