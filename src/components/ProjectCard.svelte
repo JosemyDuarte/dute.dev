@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Project } from '$lib/data/projects';
+	import { calculateEmojiPosition } from '$lib/utils/projectCard';
 
 	interface Props {
 		project: Project;
@@ -7,11 +8,6 @@
 	}
 
 	let { project, index }: Props = $props();
-
-	// Extract to named function for testability
-	export function calculateEmojiPosition(index: number): boolean {
-		return index % 2 === 0;
-	}
 
 	const emojiOnLeft = calculateEmojiPosition(index);
 </script>
