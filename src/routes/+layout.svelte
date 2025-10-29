@@ -3,11 +3,13 @@
 	import Header from '../components/Header.svelte';
 
 	import { openModal } from '../store';
+	import { SCROLL_THRESHOLD } from '$lib/constants';
 
 	export const prerender = true;
 
 	let y: number = 0;
-	let outerHeight: number = 0;
+	let windowHeight: number = 0;
+	$: showHeader = y > SCROLL_THRESHOLD;
 </script>
 
 {#if $openModal}
@@ -42,11 +44,11 @@
 	</div>
 {/if}
 
-{#if y > outerHeight}
+{#if showHeader}
 	<div class="fadeIn fixed left-0 top-0 z-20 flex w-full flex-col bg-white px-4">
 		<Header />
 	</div>
 {/if}
 <slot />
 <!-- <Footer /> -->
-<svelte:window bind:scrollY={y} bind:outerHeight />
+<svelte:window bind:scrollY={y} bind:outerHeight={windowHeight} />
