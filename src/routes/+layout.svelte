@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import Header from '../components/Header.svelte';
+	import { beforeNavigate } from '$app/navigation';
 
 	import { openModal } from '../store';
 	import { SCROLL_THRESHOLD } from '$lib/constants';
@@ -10,6 +11,11 @@
 	let y: number = 0;
 	let windowHeight: number = 0;
 	$: showHeader = y > SCROLL_THRESHOLD;
+
+	// Close modal when navigating
+	beforeNavigate(() => {
+		openModal.set(false);
+	});
 </script>
 
 {#if $openModal}
