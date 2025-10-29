@@ -94,4 +94,4 @@ export interface AnimationConfig {
 /**
  * Type-safe store for modal state
  */
-export type { ModalStore } from '$store';
+export type { ModalStore } from '../../store';
