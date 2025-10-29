@@ -13,6 +13,11 @@
 		<div class="hero">
 			<img
 				src="assets/profile.png"
+			width="1292"
+			height="824"
+			loading="eager"
+			fetchpriority="high"
+			decoding="async"
 				class="mx-auto h-auto w-40 rounded-full shadow-lg sm:h-auto sm:w-52 md:h-auto md:w-60 lg:h-auto lg:w-72"
 				alt="Josemy Duarte"
 			/>
