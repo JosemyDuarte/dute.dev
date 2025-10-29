@@ -6,8 +6,6 @@
 	import { openModal } from '../store';
 	import { SCROLL_THRESHOLD } from '$lib/constants';
 
-	export const prerender = true;
-
 	let y: number = 0;
 	let windowHeight: number = 0;
 	$: showHeader = y > SCROLL_THRESHOLD;

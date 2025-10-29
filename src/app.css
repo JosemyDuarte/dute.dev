@@ -6,6 +6,11 @@ html {
 	scroll-behavior: smooth;
 }
 
+/* Add scroll offset to prevent sticky header from overlapping section headers */
+section[id] {
+	scroll-margin-top: 5rem;
+}
+
 * {
 	font-family: 'Open Sans', sans-serif;
 }
