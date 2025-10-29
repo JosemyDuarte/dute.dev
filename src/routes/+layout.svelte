@@ -29,6 +29,9 @@
 
 {#if $openModal}
 	<div
+		role="dialog"
+		aria-modal="true"
+		aria-label="Navigation menu"
 		class="fixed left-0 top-0 z-50 flex h-screen w-screen flex-col gap-8 border-b bg-white p-5 px-8 md:hidden"
 	>
 		<div class="flex items-center justify-between gap-4 border-b pb-2">
@@ -36,7 +39,7 @@
 				dute.<span class="text-green-500">dev</span>
 			</h1>
 			<button
-				aria-label="Close Modal"
+				aria-label="Close navigation menu"
 				on:click={() => ($openModal = false)}
 				class="border-none outline-none"
 			>
