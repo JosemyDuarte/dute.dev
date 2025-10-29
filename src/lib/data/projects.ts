@@ -1,13 +1,27 @@
+/**
+ * Represents a project in the portfolio
+ */
 export interface Project {
+	/** Unique identifier for the project */
 	id: string;
+	/** Display title of the project */
 	title: string;
+	/** Detailed description of the project */
 	description: string;
+	/** URL to the project (GitHub, live demo, etc.) */
 	url: string;
+	/** Emoji icon representing the project */
 	emoji: string;
+	/** List of technologies/tools used in the project */
 	technologies: string[];
+	/** Whether the project should be featured prominently */
 	featured?: boolean;
 }
 
+/**
+ * Collection of portfolio projects
+ * Listed in order of prominence/importance
+ */
 export const projects: Project[] = [
 	{
 		id: 'devsquotesprinter',
