@@ -65,7 +65,7 @@
 {/if}
 
 {#if showHeader}
-	<div class="fadeIn fixed left-0 top-0 z-20 flex w-full flex-col bg-white px-4">
+	<div class="animate-fade-in fixed left-0 top-0 z-20 flex w-full flex-col bg-white px-4">
 		<Header />
 	</div>
 {/if}
