@@ -27,6 +27,8 @@
 	}
 </script>
 
+<a href="#main-content" class="skip-to-content">Skip to content</a>
+
 {#if $openModal}
 	<div
 		role="dialog"
@@ -67,6 +69,8 @@
 		<Header />
 	</div>
 {/if}
-<slot />
+<main id="main-content">
+	<slot />
+</main>
 <!-- <Footer /> -->
 <svelte:window bind:scrollY={y} bind:outerHeight={windowHeight} onkeydown={handleKeyDown} />
