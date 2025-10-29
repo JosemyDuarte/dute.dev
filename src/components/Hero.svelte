@@ -32,6 +32,7 @@
 
 		<a
 			href="#projects"
+			aria-label="Scroll down to view personal projects"
 			class="mt-16 flex animate-bounce flex-col items-center text-gray-600 transition duration-200 hover:text-blue-500"
 		>
 			<svg
