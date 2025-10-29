@@ -4,6 +4,7 @@
 	import SectionWrapper from './SectionWrapper.svelte';
 	import ProjectCard from './ProjectCard.svelte';
 	import { projects } from '$lib/data/projects';
+	import { getAnimationDelay } from '$lib/utils/animation';
 </script>
 
 <SectionWrapper id="hero">
@@ -79,7 +80,7 @@
 			{#each projects as project, index}
 				<div
 					class="animate-slide-up"
-					style="animation-delay: {index * 150}ms; animation-fill-mode: forwards;"
+					style="animation-delay: {getAnimationDelay(index)}; animation-fill-mode: forwards;"
 				>
 					<ProjectCard {project} {index} />
 				</div>
