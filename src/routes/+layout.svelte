@@ -16,6 +16,15 @@
 	beforeNavigate(() => {
 		openModal.set(false);
 	});
+
+	/**
+	 * Handle keyboard events for modal
+	 */
+	function handleKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Escape' && $openModal) {
+			openModal.set(false);
+		}
+	}
 </script>
 
 {#if $openModal}
@@ -57,4 +66,4 @@
 {/if}
 <slot />
 <!-- <Footer /> -->
-<svelte:window bind:scrollY={y} bind:outerHeight={windowHeight} />
+<svelte:window bind:scrollY={y} bind:outerHeight={windowHeight} onkeydown={handleKeyDown} />
