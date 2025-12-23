@@ -79,5 +79,22 @@ export const projects: Project[] = [
 			Calculator: 'text-emerald-500'
 		},
 		featured: true
+	},
+	{
+		id: 'index-funds-comparator',
+		title: 'Index Funds Comparator',
+		description:
+			'A tool that compares MyInvestor and IndexaCapital fees to help you decide which is the best platform to invest based on your portfolio size.',
+		url: 'https://indexfundscompartor.pages.dev',
+		emoji: '📊',
+		category: 'FINANCE',
+		bgColor: 'bg-[#E0F2F1]',
+		technologies: ['Svelte', 'Finance', 'Comparison'],
+		tagColors: {
+			Svelte: 'text-red-500',
+			Finance: 'text-green-500',
+			Comparison: 'text-indigo-500'
+		},
+		featured: true
 	}
 ];
