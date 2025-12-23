@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Project } from '$lib/data/projects';
-	import { calculateEmojiPosition } from '$lib/utils/projectCard';
 
 	interface Props {
 		project: Project;
@@ -8,90 +7,70 @@
 	}
 
 	let { project, index }: Props = $props();
-
-	const emojiOnLeft = calculateEmojiPosition(index);
 </script>
 
 <div
-	class="group relative flex {emojiOnLeft
-		? 'flex-col md:flex-row'
-		: 'flex-col-reverse md:flex-row'} items-center gap-6 md:gap-12"
+	class="group relative flex w-full flex-col overflow-hidden rounded-[32px] bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] ring-1 ring-gray-100 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] md:flex-row md:items-center md:gap-10 md:p-8"
 >
-	<!-- Emoji Icon -->
-	{#if emojiOnLeft}
-		<div
-			class="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 text-4xl shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl sm:h-24 sm:w-24 sm:text-5xl md:h-32 md:w-32 md:text-6xl"
-		>
-			{project.emoji}
-		</div>
-	{/if}
-
-	<!-- Project Card -->
-	<a
-		href={project.url}
-		target="_blank"
-		rel="noopener noreferrer"
-		aria-label="View {project.title} project - {project.description}"
-		class="relative w-full overflow-hidden rounded-2xl border border-gray-200/50 bg-gradient-to-br from-white to-gray-50/50 p-6 shadow-lg backdrop-blur-sm transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl sm:p-8 md:w-2/3"
+	<!-- Emoji Icon Container -->
+	<div
+		class="flex aspect-square w-full items-center justify-center rounded-2xl {project.bgColor} transition-transform duration-500 group-hover:scale-105 md:w-[280px]"
 	>
-		<!-- Animated gradient overlay -->
-		<div
-			class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-		></div>
+		<span class="text-7xl md:text-8xl">{project.emoji}</span>
+	</div>
 
-		<!-- Accent line -->
-		<div
-			class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-500 to-indigo-600 transition-all duration-500 group-hover:w-2"
-		></div>
-
-		<div class="relative">
-			<!-- Title -->
-			<h4
-				class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-2xl font-bold text-transparent md:text-3xl"
+	<!-- Project Info -->
+	<div class="mt-8 flex-1 md:mt-0">
+		<div class="flex flex-col gap-3">
+			<span
+				class="inline-block self-start rounded-full bg-gray-100 px-4 py-1 text-xs font-bold tracking-wider text-gray-500"
 			>
+				{project.category}
+			</span>
+			<h4 class="text-3xl font-bold text-[#1a1c1e] md:text-4xl">
 				{project.title}
 			</h4>
-
-			<!-- Description -->
-			<p class="mt-4 leading-relaxed text-gray-700">
+			<p class="text-base leading-relaxed text-[#4b5563] md:text-lg">
 				{project.description}
 			</p>
+		</div>
 
+		<div class="mt-8 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
 			<!-- Technology Tags -->
-			<div class="mt-6 flex flex-wrap gap-2">
+			<div class="flex flex-wrap gap-3">
 				{#each project.technologies as tech}
-					<span
-						class="rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 px-3 py-1 text-sm font-medium text-blue-700 ring-1 ring-blue-200/50 transition-all duration-300 group-hover:ring-2 group-hover:ring-blue-400"
+					<div
+						class="flex items-center gap-2 rounded-full border border-gray-100 bg-white px-4 py-1.5 shadow-sm transition-all duration-300 hover:border-gray-200"
 					>
-						{tech}
-					</span>
+						<span class="h-2 w-2 rounded-full {project.tagColors?.[tech] || 'bg-gray-400'}"></span>
+						<span class="text-sm font-medium text-gray-600">{tech}</span>
+					</div>
 				{/each}
 			</div>
 
-			<!-- Call to Action -->
-			<div
-				class="mt-6 flex items-center font-semibold text-blue-600 transition-colors duration-300 group-hover:text-indigo-600"
+			<!-- Explore Action -->
+			<a
+				href={project.url}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="group/btn flex items-center gap-2 rounded-xl bg-[#4285F4] px-6 py-3 font-semibold text-white shadow-[0_4px_14px_0_rgba(66,133,244,0.39)] transition-all duration-300 hover:bg-[#3367d6] hover:shadow-[0_6px_20px_rgba(66,133,244,0.23)]"
 			>
-				<span>Explore Project</span>
+				<span>Explore</span>
 				<svg
-					class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2"
+					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
 					viewBox="0 0 24 24"
-					stroke="currentColor"
 					stroke-width="2.5"
+					stroke="currentColor"
+					class="h-4 w-4 transition-transform duration-300 group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1"
 				>
-					<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+					/>
 				</svg>
-			</div>
+			</a>
 		</div>
-	</a>
-
-	<!-- Emoji Icon (right side) -->
-	{#if !emojiOnLeft}
-		<div
-			class="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 text-4xl shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl sm:h-24 sm:w-24 sm:text-5xl md:h-32 md:w-32 md:text-6xl"
-		>
-			{project.emoji}
-		</div>
-	{/if}
+	</div>
 </div>

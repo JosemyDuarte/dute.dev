@@ -13,11 +13,11 @@
 		<div class="hero">
 			<img
 				src="assets/profile.png"
-			width="1292"
-			height="824"
-			loading="eager"
-			fetchpriority="high"
-			decoding="async"
+				width="1292"
+				height="824"
+				loading="eager"
+				fetchpriority="high"
+				decoding="async"
 				class="mx-auto h-auto w-40 rounded-full shadow-lg sm:h-auto sm:w-52 md:h-auto md:w-60 lg:h-auto lg:w-72"
 				alt="Josemy Duarte"
 			/>
@@ -56,32 +56,24 @@
 </SectionWrapper>
 
 <SectionWrapper id="projects">
-	<div class="mx-auto w-full max-w-6xl px-4 py-16">
+	<div class="relative mx-auto w-full max-w-6xl px-4 py-24">
+		<!-- Grid Background -->
+		<div
+			class="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
+		></div>
+
 		<!-- Section Header -->
-		<div class="mb-16 text-center">
-			<div class="relative inline-block">
-				<h3
-					class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-5xl font-bold text-transparent md:text-6xl"
-				>
-					Personal Projects
-				</h3>
-				<span class="absolute -right-12 -top-2 animate-bounce text-4xl">🚀</span>
-			</div>
-			<p class="mx-auto mt-6 max-w-2xl text-lg text-gray-600 md:text-xl">
-				Building tools that solve real problems and make life easier
+		<div class="mb-20 text-center">
+			<h3 class="text-6xl font-black tracking-tight text-[#4285F4] md:text-8xl">
+				Personal Projects
+			</h3>
+			<p class="mx-auto mt-6 max-w-2xl text-lg font-medium text-[#4b5563] md:text-xl">
+				Building tools that solve real problems and make life easier through code and creativity.
 			</p>
 		</div>
 
 		<!-- Projects Grid -->
-		<div class="relative space-y-20 md:space-y-28">
-			<!-- Animated background elements -->
-			<div class="absolute inset-0 -z-10 overflow-hidden">
-				<div class="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-blue-100/30 blur-3xl"></div>
-				<div
-					class="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-indigo-100/30 blur-3xl"
-				></div>
-			</div>
-
+		<div class="relative space-y-12">
 			<!-- Project Cards -->
 			{#each projects as project, index}
 				<div
