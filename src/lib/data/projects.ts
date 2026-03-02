@@ -96,5 +96,22 @@ export const projects: Project[] = [
 			Comparison: 'text-indigo-500'
 		},
 		featured: true
+	},
+	{
+		id: 'trmnl-pregnancy-tracker',
+		title: 'Pregnancy Tracker (TRMNL Plugin)',
+		description:
+			'A TRMNL community plugin that displays a pregnancy tracker on your e-ink dashboard. Shows weekly progress and milestones for expectant parents at a glance.',
+		url: 'https://trmnl.com/recipes/249841',
+		emoji: '🤰',
+		category: 'PLUGIN',
+		bgColor: 'bg-[#FCE4EC]',
+		technologies: ['TRMNL', 'E-Ink', 'Dashboard'],
+		tagColors: {
+			TRMNL: 'text-pink-500',
+			'E-Ink': 'text-gray-600',
+			Dashboard: 'text-rose-500'
+		},
+		featured: true
 	}
 ];
