@@ -7,62 +7,77 @@
 	}
 
 	let { project, index }: Props = $props();
+
+	const isFeatured = index === 0;
+
+	function handleMouseMove(e: MouseEvent) {
+		const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+		const x = e.clientX - rect.left;
+		const y = e.clientY - rect.top;
+		(e.currentTarget as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
+		(e.currentTarget as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+	}
+
+	function handleMouseLeave(e: MouseEvent) {
+		(e.currentTarget as HTMLElement).style.setProperty('--mouse-x', '50%');
+		(e.currentTarget as HTMLElement).style.setProperty('--mouse-y', '50%');
+	}
 </script>
 
 <div
-	class="group relative flex w-full flex-col overflow-hidden rounded-[32px] bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] ring-1 ring-gray-100 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] md:flex-row md:items-center md:gap-10 md:p-8"
+	class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 transition-all duration-300 hover:border-blue-400/30 hover:bg-white/[0.06]"
+	style="--mouse-x: 50%; --mouse-y: 50%"
+	onmousemove={handleMouseMove}
+	onmouseleave={handleMouseLeave}
 >
-	<!-- Emoji Icon Container -->
+	<!-- Spotlight overlay -->
 	<div
-		class="flex aspect-square w-full items-center justify-center rounded-2xl {project.bgColor} transition-transform duration-500 group-hover:scale-105 md:w-[280px]"
-	>
-		<span class="text-7xl md:text-8xl">{project.emoji}</span>
-	</div>
+		class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+		style="background: radial-gradient(400px at var(--mouse-x) var(--mouse-y), rgba(66,133,244,0.08), transparent 60%)"
+	></div>
 
-	<!-- Project Info -->
-	<div class="mt-8 flex-1 md:mt-0">
-		<div class="flex flex-col gap-3">
-			<span
-				class="inline-block self-start rounded-full bg-gray-100 px-4 py-1 text-xs font-bold tracking-wider text-gray-500"
-			>
-				{project.category}
-			</span>
-			<h4 class="text-3xl font-bold text-[#1a1c1e] md:text-4xl">
+	{#if isFeatured}
+		<!-- Featured (large) card layout -->
+		<div class="flex-1">
+			<div class="mb-6 flex items-center justify-between">
+				<span
+					class="inline-block rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1 text-xs font-bold tracking-wider text-blue-400"
+				>
+					{project.category}
+				</span>
+				<span class="text-5xl" aria-hidden="true">{project.emoji}</span>
+			</div>
+			<h4 class="text-3xl font-bold text-white">
 				{project.title}
 			</h4>
-			<p class="text-base leading-relaxed text-[#4b5563] md:text-lg">
+			<p class="mt-3 leading-relaxed text-slate-400">
 				{project.description}
 			</p>
 		</div>
-
-		<div class="mt-8 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-			<!-- Technology Tags -->
-			<div class="flex flex-wrap gap-3">
+		<div class="mt-8">
+			<div class="flex flex-wrap gap-2">
 				{#each project.technologies as tech}
-					<div
-						class="flex items-center gap-2 rounded-full border border-gray-100 bg-white px-4 py-1.5 shadow-sm transition-all duration-300 hover:border-gray-200"
+					<span
+						class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300"
 					>
-						<span class="h-2 w-2 rounded-full {project.tagColors?.[tech] || 'bg-gray-400'}"></span>
-						<span class="text-sm font-medium text-gray-600">{tech}</span>
-					</div>
+						{tech}
+					</span>
 				{/each}
 			</div>
-
-			<!-- Explore Action -->
 			<a
 				href={project.url}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="group/btn flex items-center gap-2 rounded-xl bg-[#4285F4] px-6 py-3 font-semibold text-white shadow-[0_4px_14px_0_rgba(66,133,244,0.39)] transition-all duration-300 hover:bg-[#3367d6] hover:shadow-[0_6px_20px_rgba(66,133,244,0.23)]"
+				class="group/link mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-400 transition-colors duration-200 hover:text-blue-300"
 			>
-				<span>Explore</span>
+				View Project
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
+					class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
 					fill="none"
 					viewBox="0 0 24 24"
-					stroke-width="2.5"
+					stroke-width="2"
 					stroke="currentColor"
-					class="h-4 w-4 transition-transform duration-300 group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1"
 				>
 					<path
 						stroke-linecap="round"
@@ -72,5 +87,59 @@
 				</svg>
 			</a>
 		</div>
-	</div>
+	{:else}
+		<!-- Standard card layout with decorative emoji watermark -->
+		<span
+			class="pointer-events-none absolute bottom-4 right-4 select-none text-8xl opacity-[0.07]"
+			aria-hidden="true"
+		>
+			{project.emoji}
+		</span>
+		<div class="flex-1">
+			<span
+				class="inline-block rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-0.5 text-xs font-bold tracking-wider text-blue-400"
+			>
+				{project.category}
+			</span>
+			<h4 class="mt-3 text-xl font-bold text-white">
+				{project.title}
+			</h4>
+			<p class="mt-2 line-clamp-3 text-sm leading-relaxed text-slate-400">
+				{project.description}
+			</p>
+		</div>
+		<div class="mt-6">
+			<div class="flex flex-wrap gap-2">
+				{#each project.technologies as tech}
+					<span
+						class="rounded-full border border-white/10 bg-white/5 px-3 py-0.5 text-xs font-medium text-slate-300"
+					>
+						{tech}
+					</span>
+				{/each}
+			</div>
+			<a
+				href={project.url}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="group/link mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-blue-400 transition-colors duration-200 hover:text-blue-300"
+			>
+				View Project
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="2.5"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+					/>
+				</svg>
+			</a>
+		</div>
+	{/if}
 </div>

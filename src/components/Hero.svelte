@@ -38,7 +38,7 @@
 		<a
 			href="#projects"
 			aria-label="Scroll down to view personal projects"
-			class="mt-16 flex animate-bounce flex-col items-center text-gray-600 transition duration-200 hover:text-blue-500"
+			class="mt-16 flex animate-bounce flex-col items-center text-gray-400 transition duration-200 hover:text-blue-400"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -55,34 +55,39 @@
 	</div>
 </SectionWrapper>
 
-<SectionWrapper id="projects">
-	<div class="relative mx-auto w-full max-w-6xl px-4 py-24">
-		<!-- Grid Background -->
-		<div
-			class="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
-		></div>
+<div class="bg-[#0d1117]">
+	<SectionWrapper id="projects">
+		<div class="relative mx-auto w-full max-w-6xl px-4 py-24">
+			<!-- Dots background pattern -->
+			<div
+				class="absolute inset-0 -z-10 [background-image:radial-gradient(circle,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:24px_24px]"
+			></div>
 
-		<!-- Section Header -->
-		<div class="mb-20 text-center">
-			<h3 class="text-6xl font-black tracking-tight text-[#4285F4] md:text-8xl">
-				Personal Projects
-			</h3>
-			<p class="mx-auto mt-6 max-w-2xl text-lg font-medium text-[#4b5563] md:text-xl">
-				Building tools that solve real problems and make life easier through code and creativity.
-			</p>
-		</div>
-
-		<!-- Projects Grid -->
-		<div class="relative space-y-12">
-			<!-- Project Cards -->
-			{#each projects as project, index}
-				<div
-					class="animate-slide-up"
-					style="animation-delay: {getAnimationDelay(index)}; animation-fill-mode: forwards;"
+			<!-- Section Header -->
+			<div class="mb-16 text-center">
+				<h3
+					class="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-6xl font-black tracking-tight text-transparent md:text-8xl"
 				>
-					<ProjectCard {project} {index} />
-				</div>
-			{/each}
+					Personal Projects
+				</h3>
+				<p class="mx-auto mt-6 max-w-2xl text-lg font-medium text-slate-400 md:text-xl">
+					Building tools that solve real problems and make life easier through code and creativity.
+				</p>
+			</div>
+
+			<!-- Bento Grid -->
+			<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+				{#each projects as project, index}
+					<div
+						class="animate-slide-up
+							{index === 0 ? 'md:col-span-2 lg:col-span-2 lg:row-span-2' : ''}
+							{index === 4 ? 'lg:col-span-2' : ''}"
+						style="animation-delay: {getAnimationDelay(index)}; animation-fill-mode: forwards;"
+					>
+						<ProjectCard {project} {index} />
+					</div>
+				{/each}
+			</div>
 		</div>
-	</div>
-</SectionWrapper>
+	</SectionWrapper>
+</div>
