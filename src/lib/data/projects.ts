@@ -113,5 +113,39 @@ export const projects: Project[] = [
 			Dashboard: 'text-rose-500'
 		},
 		featured: true
+	},
+	{
+		id: 'trmnl-coffee-recipe',
+		title: 'Coffee Recipe (TRMNL Plugin)',
+		description:
+			'A TRMNL community plugin that displays a coffee recipe on your e-ink dashboard. Your daily brew guide, always in sight.',
+		url: 'https://trmnl.com/recipes/252053',
+		emoji: '☕',
+		category: 'PLUGIN',
+		bgColor: 'bg-[#FFF3E0]',
+		technologies: ['TRMNL', 'E-Ink', 'Dashboard'],
+		tagColors: {
+			TRMNL: 'text-amber-600',
+			'E-Ink': 'text-gray-600',
+			Dashboard: 'text-orange-500'
+		},
+		featured: true
+	},
+	{
+		id: 'trmnl-trakt-wasted-time',
+		title: 'TraktWastedTime (TRMNL Plugin)',
+		description:
+			'Find out exactly how many days of your life you\'ve donated to the screen. Because someone had to put a number on your TV addiction.',
+		url: 'https://trmnl.com/recipes/252905',
+		emoji: '📺',
+		category: 'PLUGIN',
+		bgColor: 'bg-[#EDE7F6]',
+		technologies: ['TRMNL', 'Trakt', 'E-Ink'],
+		tagColors: {
+			TRMNL: 'text-purple-500',
+			Trakt: 'text-red-500',
+			'E-Ink': 'text-gray-600'
+		},
+		featured: true
 	}
 ];
