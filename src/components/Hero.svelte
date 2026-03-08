@@ -23,11 +23,11 @@
 			/>
 		</div>
 
-		<h2
+		<h1
 			class="mx-auto w-full max-w-[1200px] text-center text-5xl font-semibold sm:text-6xl md:text-7xl lg:text-8xl"
 		>
-			Hello👋, I'm <span class="text-blue-500">Josemy Duarte</span>
-		</h2>
+			Hello 👋, I'm <span class="text-brand-primary">Josemy Duarte</span>
+		</h1>
 		<p class="mx-auto w-full max-w-[1000px] text-center text-xl sm:text-2xl md:text-3xl">
 			I assist companies in creating <span class="font-semibold italic">scalable</span> and
 			<span class="font-semibold italic">reliable</span> cloud applications, ensuring service
@@ -65,11 +65,11 @@
 
 			<!-- Section Header -->
 			<div class="mb-16 text-center">
-				<h3
+				<h2
 					class="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-6xl font-black tracking-tight text-transparent md:text-8xl"
 				>
 					Personal Projects
-				</h3>
+				</h2>
 				<p class="mx-auto mt-6 max-w-2xl text-lg font-medium text-slate-400 md:text-xl">
 					Building tools that solve real problems and make life easier through code and creativity.
 				</p>

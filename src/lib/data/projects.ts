@@ -20,8 +20,6 @@ export interface Project {
 	bgColor: string;
 	/** Optional specific colors for technology tags */
 	tagColors?: Record<string, string>;
-	/** Whether the project should be featured prominently */
-	featured?: boolean;
 }
 
 /**
@@ -33,7 +31,7 @@ export const projects: Project[] = [
 		id: 'devsquotesprinter',
 		title: 'DevsQuotesPrinter',
 		description:
-			'A GoLang service that builds an image with the provided text printed on it. Used for automating sharing quotes on social media, streamlining the content creation process for developers.',
+			'Takes a quote, returns a post-ready image. Built to automate the repetitive part of sharing developer quotes on social media.',
 		url: 'https://github.com/JosemyDuarte/DevsQuotesPrinter',
 		emoji: '🖨️',
 		category: 'TOOLING',
@@ -43,14 +41,13 @@ export const projects: Project[] = [
 			Go: 'text-blue-500',
 			'Image Processing': 'text-indigo-500',
 			Automation: 'text-purple-500'
-		},
-		featured: true
+		}
 	},
 	{
 		id: 'feed2pocket',
 		title: 'feed2pocket',
 		description:
-			'Feeds2Pocket fetches and stores RSS links into Pocket. I wanted a simple way to read my RSS feeds on my Kobo e-reader. It runs as a cron job in Cloudflare Workers for efficiency.',
+			'Wanted my RSS feeds on my Kobo e-reader. Wrote a Cloudflare Worker that runs on a cron to sync them into Pocket automatically. Solves one problem, does it silently.',
 		url: 'https://github.com/JosemyDuarte/feed2pocket',
 		emoji: '📚',
 		category: 'UTILITY',
@@ -60,14 +57,13 @@ export const projects: Project[] = [
 			'Cloudflare Workers': 'text-orange-500',
 			RSS: 'text-cyan-500',
 			TypeScript: 'text-blue-600'
-		},
-		featured: true
+		}
 	},
 	{
 		id: 'fire-calculator',
 		title: 'FIRE Calculator',
 		description:
-			'FIRE (Financial Independence, Retire Early) quickly calculates how much you need to save to comfortably retire and live off your investments based on your spending habits.',
+			'Enter what you spend. Get back the number that means you never have to work again. A Financial Independence calculator built for the Spanish-speaking market.',
 		url: 'https://calculadorafire.netlify.app/',
 		emoji: '💰',
 		category: 'FINANCE',
@@ -77,14 +73,13 @@ export const projects: Project[] = [
 			Svelte: 'text-red-500',
 			Finance: 'text-green-500',
 			Calculator: 'text-emerald-500'
-		},
-		featured: true
+		}
 	},
 	{
 		id: 'index-funds-comparator',
 		title: 'Index Funds Comparator',
 		description:
-			'A tool that compares MyInvestor and IndexaCapital fees to help you decide which is the best platform to invest based on your portfolio size.',
+			'MyInvestor or IndexaCapital? Depends on your portfolio size. This tool shows you the fee crossover point so you can stop guessing and start optimizing.',
 		url: 'https://indexfundscompartor.pages.dev',
 		emoji: '📊',
 		category: 'FINANCE',
@@ -94,14 +89,13 @@ export const projects: Project[] = [
 			Svelte: 'text-red-500',
 			Finance: 'text-green-500',
 			Comparison: 'text-indigo-500'
-		},
-		featured: true
+		}
 	},
 	{
 		id: 'trmnl-pregnancy-tracker',
 		title: 'Pregnancy Tracker (TRMNL Plugin)',
 		description:
-			'A TRMNL community plugin that displays a pregnancy tracker on your e-ink dashboard. Shows weekly progress and milestones for expectant parents at a glance.',
+			'Tracks weekly pregnancy milestones on your TRMNL e-ink dashboard. Because some countdowns deserve a dedicated screen.',
 		url: 'https://trmnl.com/recipes/249841',
 		emoji: '🤰',
 		category: 'PLUGIN',
@@ -111,14 +105,13 @@ export const projects: Project[] = [
 			TRMNL: 'text-pink-500',
 			'E-Ink': 'text-gray-600',
 			Dashboard: 'text-rose-500'
-		},
-		featured: true
+		}
 	},
 	{
 		id: 'trmnl-coffee-recipe',
 		title: 'Coffee Recipe (TRMNL Plugin)',
 		description:
-			'A TRMNL community plugin that displays a coffee recipe on your e-ink dashboard. Your daily brew guide, always in sight.',
+			'Rotates through coffee brewing recipes on your e-ink display. Your daily brew guide, always in sight.',
 		url: 'https://trmnl.com/recipes/252053',
 		emoji: '☕',
 		category: 'PLUGIN',
@@ -128,14 +121,13 @@ export const projects: Project[] = [
 			TRMNL: 'text-amber-600',
 			'E-Ink': 'text-gray-600',
 			Dashboard: 'text-orange-500'
-		},
-		featured: true
+		}
 	},
 	{
 		id: 'trmnl-trakt-wasted-time',
 		title: 'TraktWastedTime (TRMNL Plugin)',
 		description:
-			'Find out exactly how many days of your life you\'ve donated to the screen. Because someone had to put a number on your TV addiction.',
+			"Find out exactly how many days of your life you've donated to the screen. Because someone had to put a number on your TV addiction.",
 		url: 'https://trmnl.com/recipes/252905',
 		emoji: '📺',
 		category: 'PLUGIN',
@@ -145,7 +137,6 @@ export const projects: Project[] = [
 			TRMNL: 'text-purple-500',
 			Trakt: 'text-red-500',
 			'E-Ink': 'text-gray-600'
-		},
-		featured: true
+		}
 	}
 ];

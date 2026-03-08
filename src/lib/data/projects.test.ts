@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { projects, type Project } from './projects';
 
 describe('projects data', () => {
-	it('should have exactly 3 projects', () => {
-		expect(projects).toHaveLength(3);
+	it('should have exactly 7 projects', () => {
+		expect(projects).toHaveLength(7);
 	});
 
 	it('should have all required fields for each project', () => {
@@ -18,7 +18,7 @@ describe('projects data', () => {
 	});
 
 	it('should have unique ids for all projects', () => {
-		const ids = projects.map(p => p.id);
+		const ids = projects.map((p) => p.id);
 		const uniqueIds = new Set(ids);
 		expect(uniqueIds.size).toBe(projects.length);
 	});
@@ -48,12 +48,6 @@ describe('projects data', () => {
 			expect(project.emoji.length).toBeGreaterThan(0);
 		});
 	});
-
-	it('should have all projects marked as featured', () => {
-		projects.forEach((project) => {
-			expect(project.featured).toBe(true);
-		});
-	});
 });
 
 describe('Project type validation', () => {
@@ -65,7 +59,8 @@ describe('Project type validation', () => {
 			url: 'https://example.com',
 			emoji: '🚀',
 			technologies: ['TypeScript'],
-			featured: true
+			category: 'TOOLING',
+			bgColor: 'bg-[#DEE7FF]'
 		};
 
 		expect(mockProject).toHaveProperty('id');
@@ -74,6 +69,5 @@ describe('Project type validation', () => {
 		expect(mockProject).toHaveProperty('url');
 		expect(mockProject).toHaveProperty('emoji');
 		expect(mockProject).toHaveProperty('technologies');
-		expect(mockProject.featured).toBe(true);
 	});
 });
