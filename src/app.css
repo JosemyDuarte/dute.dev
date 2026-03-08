@@ -2,6 +2,38 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* === dute.dev Brand Tokens ===
+   Canonical values live in src/lib/brand.ts.
+   These CSS custom properties mirror those tokens for runtime use.
+   Keep both files in sync when updating brand colors or radii.
+*/
+:root {
+	/* Colors */
+	--color-primary: #0834c4;
+	--color-primary-dark: #00008b;
+	--color-accent: #22c55e;
+
+	--color-surface-light: #ffffff;
+	--color-surface-dark: #0d1117;
+
+	--color-text-base: #1e293b;
+	--color-text-muted: #64748b;
+
+	/* Typography */
+	--font-heading: 'Poppins', sans-serif;
+	--font-body: 'Open Sans', sans-serif;
+
+	/* Border radii */
+	--radius-sm: 4px;
+	--radius-button: 8px;
+	--radius-card: 16px;
+	--radius-pill: 9999px;
+
+	/* Transitions */
+	--transition-base: 200ms ease;
+	--transition-slow: 500ms ease-out;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -49,7 +81,7 @@ button,
 }
 
 button:hover {
-	border-color: #0834c4;
+	border-color: var(--color-primary);
 }
 
 button:focus,
@@ -58,12 +90,12 @@ button:focus-visible {
 }
 
 .specialBtn {
-	border-color: #0834c4;
+	border-color: var(--color-primary);
 	border-width: 2px;
 }
 
 .specialBtnDark {
-	background: #0834c4;
+	background: var(--color-primary);
 	color: white;
 }
 
@@ -88,7 +120,7 @@ button:focus-visible {
 	position: absolute;
 	top: -40px;
 	left: 0;
-	background: #0834c4;
+	background: var(--color-primary);
 	color: white;
 	padding: 8px 16px;
 	text-decoration: none;
@@ -104,7 +136,7 @@ button:focus-visible {
 /* Enhanced focus-visible styles for keyboard navigation */
 a:focus-visible,
 button:focus-visible {
-	outline: 3px solid #0834c4;
+	outline: 3px solid var(--color-primary);
 	outline-offset: 2px;
 	border-radius: 4px;
 }
@@ -119,7 +151,7 @@ button:focus:not(:focus-visible) {
 .button:focus-visible,
 .specialBtn:focus-visible,
 .specialBtnDark:focus-visible {
-	outline: 3px solid #0834c4;
+	outline: 3px solid var(--color-primary);
 	outline-offset: 2px;
 }
 

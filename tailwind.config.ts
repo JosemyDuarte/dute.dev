@@ -6,6 +6,21 @@ export default {
 
 	theme: {
 		extend: {
+			colors: {
+				brand: {
+					primary: '#0834c4',
+					'primary-dark': '#00008b',
+					accent: '#22c55e'
+				},
+				surface: {
+					light: '#ffffff',
+					dark: '#0d1117'
+				}
+			},
+			fontFamily: {
+				heading: ["'Poppins'", 'sans-serif'],
+				body: ["'Open Sans'", 'sans-serif']
+			},
 			animation: {
 				'fade-in': 'fadeIn 300ms ease-in forwards',
 				'slide-up': 'slideUp 0.5s ease-out',
