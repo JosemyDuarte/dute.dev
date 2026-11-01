@@ -52,3 +52,21 @@ yarn test src/store/index.test.js
 ## Coverage Goal
 
 We aim for **100% coverage of business logic**, not 100% code coverage. Since this is a presentational portfolio site with minimal logic, our 19 tests provide excellent confidence.
+
+## Build runtime
+
+Use Node.js 22.23.4, as specified in `.node-version`. Cloudflare Pages reads this
+file to select the build runtime instead of the older build image default.
+
+Node 18.17.1 rejects `--use-openssl-ca` when SvelteKit creates its build worker
+with an explicit environment. Cloudflare supplies this option through
+`NODE_OPTIONS`, so a build can pass locally but fail in Pages. Node 22.23.4
+supports the option in that worker environment; keep the certificate setting
+intact.
+
+To verify the deployment-specific condition, run the production build on the
+pinned runtime with Cloudflare's option:
+
+```bash
+NODE_OPTIONS=--use-openssl-ca npm run build
+```
