@@ -57,6 +57,7 @@ describe('Project type validation', () => {
 			title: 'Test Project',
 			description: 'Test description',
 			url: 'https://example.com',
+			actionLabel: 'View source',
 			emoji: '🚀',
 			technologies: ['TypeScript'],
 			category: 'TOOLING',

@@ -1,12 +1,13 @@
 <script>
-	// export let dark;
+	import { EXTERNAL_LINKS } from '$lib/constants';
 </script>
 
 <div class="mt-10 flex items-center gap-5">
 	<a
-		href="https://www.linkedin.com/in/josemyduarte/"
+		href={EXTERNAL_LINKS.linkedin}
 		aria-label="LinkedIn"
 		target="_blank"
+		rel="noopener noreferrer"
 		class="flex h-12 w-12 items-center justify-center text-gray-500 transition-colors hover:text-gray-700 dark:hover:text-gray-300"
 	>
 		<svg
@@ -22,9 +23,10 @@
 	</a>
 
 	<a
-		href="https://github.com/JosemyDuarte"
+		href={EXTERNAL_LINKS.github}
 		aria-label="GitHub"
 		target="_blank"
+		rel="noopener noreferrer"
 		class="flex h-12 w-12 items-center justify-center text-gray-500 transition-colors hover:text-gray-700 dark:hover:text-gray-300"
 	>
 		<svg
@@ -40,8 +42,9 @@
 	</a>
 
 	<a
-		href="https://josemyduarte.github.io/"
+		href={EXTERNAL_LINKS.blog}
 		target="_blank"
+		rel="noopener noreferrer"
 		aria-label="Personal Blog"
 		class="flex h-12 w-12 items-center justify-center text-gray-500 transition-colors hover:text-gray-700 dark:hover:text-gray-300"
 	>
@@ -61,7 +64,7 @@
 	</a>
 
 	<a
-		href="mailto:me@dute.dev"
+		href={EXTERNAL_LINKS.email}
 		aria-label="Email"
 		class="flex h-12 w-12 items-center justify-center text-gray-500 transition-colors hover:text-gray-700 dark:hover:text-gray-300"
 	>

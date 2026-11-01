@@ -10,6 +10,16 @@ export interface Project {
 	description: string;
 	/** URL to the project (GitHub, live demo, etc.) */
 	url: string;
+	/** Describes the destination before opening it. */
+	actionLabel: string;
+	/** Curated projects shown before the rest of the collection. */
+	featured?: boolean;
+	/** A concise implementation detail for featured projects. */
+	detail?: string;
+	/** Three steps illustrating the project workflow. */
+	workflow?: [string, string, string];
+	/** Historical projects whose upstream service is no longer available. */
+	archived?: boolean;
 	/** Emoji icon representing the project */
 	emoji: string;
 	/** List of technologies/tools used in the project */
@@ -24,7 +34,7 @@ export interface Project {
 
 /**
  * Collection of portfolio projects
- * Listed in order of prominence/importance
+ * Featured projects are curated explicitly; array order is preserved within each group.
  */
 export const projects: Project[] = [
 	{
@@ -33,6 +43,11 @@ export const projects: Project[] = [
 		description:
 			'Takes a quote, returns a post-ready image. Built to automate the repetitive part of sharing developer quotes on social media.',
 		url: 'https://github.com/JosemyDuarte/DevsQuotesPrinter',
+		actionLabel: 'View source',
+		featured: true,
+		detail:
+			'A Go image-generation service with Docker and Google Cloud Functions deployment options.',
+		workflow: ['Quote text', 'Go renderer', 'PNG image'],
 		emoji: '🖨️',
 		category: 'TOOLING',
 		bgColor: 'bg-[#DEE7FF]',
@@ -47,8 +62,10 @@ export const projects: Project[] = [
 		id: 'feed2pocket',
 		title: 'feed2pocket',
 		description:
-			'Wanted my RSS feeds on my Kobo e-reader. Wrote a Cloudflare Worker that runs on a cron to sync them into Pocket automatically. Solves one problem, does it silently.',
+			'A scheduled Cloudflare Worker that synced RSS feeds into Pocket for reading on a Kobo e-reader. Retained as a historical example of serverless automation.',
 		url: 'https://github.com/JosemyDuarte/feed2pocket',
+		actionLabel: 'View archived source',
+		archived: true,
 		emoji: '📚',
 		category: 'UTILITY',
 		bgColor: 'bg-[#D1F2EB]',
@@ -65,6 +82,10 @@ export const projects: Project[] = [
 		description:
 			'Enter what you spend. Get back the number that means you never have to work again. A Financial Independence calculator built for the Spanish-speaking market.',
 		url: 'https://calculadorafire.netlify.app/',
+		actionLabel: 'Try calculator',
+		featured: true,
+		detail: 'Built with Svelte for Spanish-speaking readers exploring financial independence.',
+		workflow: ['Your spending', 'FIRE calculator', 'Savings target'],
 		emoji: '💰',
 		category: 'FINANCE',
 		bgColor: 'bg-[#FEF5D4]',
@@ -81,6 +102,10 @@ export const projects: Project[] = [
 		description:
 			'MyInvestor or IndexaCapital? Depends on your portfolio size. This tool shows you the fee crossover point so you can stop guessing and start optimizing.',
 		url: 'https://indexfundscompartor.pages.dev',
+		actionLabel: 'Compare fees',
+		featured: true,
+		detail: 'A Svelte tool for comparing MyInvestor and IndexaCapital fees across portfolio sizes.',
+		workflow: ['Portfolio size', 'Fee comparison', 'Crossover point'],
 		emoji: '📊',
 		category: 'FINANCE',
 		bgColor: 'bg-[#E0F2F1]',
@@ -97,6 +122,7 @@ export const projects: Project[] = [
 		description:
 			'Tracks weekly pregnancy milestones on your TRMNL e-ink dashboard. Because some countdowns deserve a dedicated screen.',
 		url: 'https://trmnl.com/recipes/249841',
+		actionLabel: 'Install TRMNL plugin',
 		emoji: '🤰',
 		category: 'PLUGIN',
 		bgColor: 'bg-[#FCE4EC]',
@@ -113,6 +139,7 @@ export const projects: Project[] = [
 		description:
 			'Rotates through coffee brewing recipes on your e-ink display. Your daily brew guide, always in sight.',
 		url: 'https://trmnl.com/recipes/252053',
+		actionLabel: 'Install TRMNL plugin',
 		emoji: '☕',
 		category: 'PLUGIN',
 		bgColor: 'bg-[#FFF3E0]',
@@ -129,6 +156,7 @@ export const projects: Project[] = [
 		description:
 			"Find out exactly how many days of your life you've donated to the screen. Because someone had to put a number on your TV addiction.",
 		url: 'https://trmnl.com/recipes/252905',
+		actionLabel: 'Install TRMNL plugin',
 		emoji: '📺',
 		category: 'PLUGIN',
 		bgColor: 'bg-[#EDE7F6]',

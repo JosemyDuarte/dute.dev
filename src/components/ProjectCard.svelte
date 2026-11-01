@@ -1,145 +1,82 @@
 <script lang="ts">
 	import type { Project } from '$lib/data/projects';
 
-	interface Props {
-		project: Project;
-		index: number;
-	}
-
-	let { project, index }: Props = $props();
-
-	const isFeatured = index === 0;
-
-	function handleMouseMove(e: MouseEvent) {
-		const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-		const x = e.clientX - rect.left;
-		const y = e.clientY - rect.top;
-		(e.currentTarget as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
-		(e.currentTarget as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
-	}
-
-	function handleMouseLeave(e: MouseEvent) {
-		(e.currentTarget as HTMLElement).style.setProperty('--mouse-x', '50%');
-		(e.currentTarget as HTMLElement).style.setProperty('--mouse-y', '50%');
-	}
+	let { project }: { project: Project } = $props();
 </script>
 
-<div
-	class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 transition-all duration-300 hover:border-blue-400/30 hover:bg-white/[0.06]"
-	style="--mouse-x: 50%; --mouse-y: 50%"
-	onmousemove={handleMouseMove}
-	onmouseleave={handleMouseLeave}
+<article
+	class="relative flex h-full min-w-0 flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-blue-400/30 hover:bg-white/[0.06]"
 >
-	<!-- Spotlight overlay -->
-	<div
-		class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-		style="background: radial-gradient(400px at var(--mouse-x) var(--mouse-y), rgba(66,133,244,0.08), transparent 60%)"
-	></div>
-
-	{#if isFeatured}
-		<!-- Featured (large) card layout -->
-		<div class="flex-1">
-			<div class="mb-6 flex items-center justify-between">
-				<span
-					class="inline-block rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1 text-xs font-bold tracking-wider text-blue-400"
-				>
-					{project.category}
-				</span>
-				<span class="text-5xl" aria-hidden="true">{project.emoji}</span>
-			</div>
-			<h4 class="text-3xl font-bold text-white">
-				{project.title}
-			</h4>
-			<p class="mt-3 leading-relaxed text-slate-400">
-				{project.description}
-			</p>
-		</div>
-		<div class="mt-8">
-			<div class="flex flex-wrap gap-2">
-				{#each project.technologies as tech}
-					<span
-						class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300"
-					>
-						{tech}
-					</span>
-				{/each}
-			</div>
-			<a
-				href={project.url}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="group/link mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-400 transition-colors duration-200 hover:text-blue-300"
-			>
-				View Project
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="2"
-					stroke="currentColor"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-					/>
-				</svg>
-			</a>
-		</div>
-	{:else}
-		<!-- Standard card layout with decorative emoji watermark -->
+	<div class="mb-5 flex flex-wrap items-center gap-3">
 		<span
-			class="pointer-events-none absolute bottom-4 right-4 select-none text-8xl opacity-[0.07]"
-			aria-hidden="true"
+			class="rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1 text-xs font-bold tracking-wider text-blue-300"
+			>{project.category}</span
 		>
-			{project.emoji}
-		</span>
-		<div class="flex-1">
+		{#if project.archived}
 			<span
-				class="inline-block rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-0.5 text-xs font-bold tracking-wider text-blue-400"
+				class="rounded-full border border-amber-400/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-200"
+				>Archived</span
 			>
-				{project.category}
-			</span>
-			<h4 class="mt-3 text-xl font-bold text-white">
-				{project.title}
-			</h4>
-			<p class="mt-2 line-clamp-3 text-sm leading-relaxed text-slate-400">
-				{project.description}
-			</p>
-		</div>
-		<div class="mt-6">
-			<div class="flex flex-wrap gap-2">
-				{#each project.technologies as tech}
-					<span
-						class="rounded-full border border-white/10 bg-white/5 px-3 py-0.5 text-xs font-medium text-slate-300"
+		{/if}
+		<span class="ml-auto text-3xl" aria-hidden="true">{project.emoji}</span>
+	</div>
+	<h3 class="break-words text-xl font-bold text-white sm:text-2xl">{project.title}</h3>
+	<p class="mt-3 leading-relaxed text-slate-300">{project.description}</p>
+
+	{#if project.workflow}
+		<figure class="my-6 rounded-xl border border-blue-400/20 bg-blue-950/30 p-4">
+			<figcaption class="mb-4 text-xs font-semibold uppercase tracking-widest text-blue-200">
+				How it works
+			</figcaption>
+			<ol class="space-y-3">
+				{#each project.workflow as step, index}
+					<li
+						class="relative flex items-center gap-3 text-sm text-slate-200 before:absolute before:left-[13px] before:top-7 before:h-3 before:border-l before:border-blue-400/30 last:before:hidden"
 					>
-						{tech}
-					</span>
+						<span
+							aria-hidden="true"
+							class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-blue-400/30 bg-blue-400/10 text-xs font-semibold text-blue-200"
+							>{index + 1}</span
+						>
+						{step}
+					</li>
 				{/each}
-			</div>
+			</ol>
+		</figure>
+	{/if}
+	{#if project.detail}
+		<p class="mb-6 text-sm leading-relaxed text-slate-400">{project.detail}</p>
+	{/if}
+	{#if project.archived}
+		<p class="my-4 text-sm leading-relaxed text-amber-100/90">
+			Pocket shut down in July 2025, so this integration no longer runs.
 			<a
-				href={project.url}
+				href="https://blog.mozilla.org/en/mozilla/building-whats-next/"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="group/link mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-blue-400 transition-colors duration-200 hover:text-blue-300"
-			>
-				View Project
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="2.5"
-					stroke="currentColor"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-					/>
-				</svg>
-			</a>
-		</div>
+				class="underline underline-offset-4 hover:text-white"
+				>Read Mozilla’s announcement<span class="sr-only"> (opens in a new tab)</span></a
+			>.
+		</p>
 	{/if}
-</div>
+	<div class="mt-auto pt-6">
+		<ul aria-label="Technologies" class="flex flex-wrap gap-2">
+			{#each project.technologies as tech}
+				<li
+					class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300"
+				>
+					{tech}
+				</li>
+			{/each}
+		</ul>
+		<a
+			href={project.url}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-blue-300 underline-offset-4 hover:text-blue-200 hover:underline"
+		>
+			{project.actionLabel}<span class="sr-only">: {project.title} (opens in a new tab)</span>
+			<span aria-hidden="true">↗</span>
+		</a>
+	</div>
+</article>
