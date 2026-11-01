@@ -168,3 +168,13 @@ button:focus:not(:focus-visible) {
 	color: rgba(0, 0, 0, 0.1);
 	pointer-events: none;
 }
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+#projects a:focus-visible {
+	outline-color: #93c5fd;
+}
