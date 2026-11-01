@@ -2,6 +2,10 @@
 	import type { Project } from '$lib/data/projects';
 
 	let { project }: { project: Project } = $props();
+	let links = $derived([
+		{ label: project.actionLabel, url: project.url },
+		...(project.additionalLinks ?? [])
+	]);
 </script>
 
 <article
@@ -69,14 +73,18 @@
 				</li>
 			{/each}
 		</ul>
-		<a
-			href={project.url}
-			target="_blank"
-			rel="noopener noreferrer"
-			class="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-blue-300 underline-offset-4 hover:text-blue-200 hover:underline"
-		>
-			{project.actionLabel}<span class="sr-only">: {project.title} (opens in a new tab)</span>
-			<span aria-hidden="true">↗</span>
-		</a>
+		<div class="mt-4 flex flex-col items-start">
+			{#each links as link (link.url)}
+				<a
+					href={link.url}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex min-h-11 items-center gap-2 font-semibold text-blue-300 underline-offset-4 hover:text-blue-200 hover:underline"
+				>
+					{link.label}<span class="sr-only">: {project.title} (opens in a new tab)</span>
+					<span aria-hidden="true">↗</span>
+				</a>
+			{/each}
+		</div>
 	</div>
 </article>
