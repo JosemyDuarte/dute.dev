@@ -59,6 +59,18 @@ export const projects: Project[] = [
 		}
 	},
 	{
+		id: 'lazywhatsapp',
+		title: 'LazyWhatsApp',
+		description:
+			'Too many messages to catch up on? Explore activity, participant rankings and shared content from a WhatsApp export, with chat parsing handled in your browser.',
+		url: 'https://github.com/JosemyDuarte/LazyWhatsApp',
+		actionLabel: 'View source',
+		emoji: '💬',
+		category: 'ANALYTICS',
+		bgColor: 'bg-[#D1F2EB]',
+		technologies: ['Astro', 'TypeScript', 'Web Workers']
+	},
+	{
 		id: 'feed2pocket',
 		title: 'feed2pocket',
 		description:
