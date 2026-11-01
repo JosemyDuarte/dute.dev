@@ -12,6 +12,8 @@ export interface Project {
 	url: string;
 	/** Describes the destination before opening it. */
 	actionLabel: string;
+	/** Additional destinations for grouped projects. */
+	additionalLinks?: { label: string; url: string }[];
 	/** Curated projects shown before the rest of the collection. */
 	featured?: boolean;
 	/** A concise implementation detail for featured projects. */
@@ -129,54 +131,19 @@ export const projects: Project[] = [
 		}
 	},
 	{
-		id: 'trmnl-pregnancy-tracker',
-		title: 'Pregnancy Tracker (TRMNL Plugin)',
+		id: 'trmnl-plugins',
+		title: 'TRMNL Plugins',
 		description:
-			'Tracks weekly pregnancy milestones on your TRMNL e-ink dashboard. Because some countdowns deserve a dedicated screen.',
+			'Small tools for your TRMNL e-ink display: weekly pregnancy milestones, rotating coffee recipes and a Trakt watch-time dashboard.',
 		url: 'https://trmnl.com/recipes/249841',
-		actionLabel: 'Install TRMNL plugin',
-		emoji: '🤰',
-		category: 'PLUGIN',
-		bgColor: 'bg-[#FCE4EC]',
-		technologies: ['TRMNL', 'E-Ink', 'Dashboard'],
-		tagColors: {
-			TRMNL: 'text-pink-500',
-			'E-Ink': 'text-gray-600',
-			Dashboard: 'text-rose-500'
-		}
-	},
-	{
-		id: 'trmnl-coffee-recipe',
-		title: 'Coffee Recipe (TRMNL Plugin)',
-		description:
-			'Rotates through coffee brewing recipes on your e-ink display. Your daily brew guide, always in sight.',
-		url: 'https://trmnl.com/recipes/252053',
-		actionLabel: 'Install TRMNL plugin',
-		emoji: '☕',
-		category: 'PLUGIN',
-		bgColor: 'bg-[#FFF3E0]',
-		technologies: ['TRMNL', 'E-Ink', 'Dashboard'],
-		tagColors: {
-			TRMNL: 'text-amber-600',
-			'E-Ink': 'text-gray-600',
-			Dashboard: 'text-orange-500'
-		}
-	},
-	{
-		id: 'trmnl-trakt-wasted-time',
-		title: 'TraktWastedTime (TRMNL Plugin)',
-		description:
-			"Find out exactly how many days of your life you've donated to the screen. Because someone had to put a number on your TV addiction.",
-		url: 'https://trmnl.com/recipes/252905',
-		actionLabel: 'Install TRMNL plugin',
-		emoji: '📺',
-		category: 'PLUGIN',
+		actionLabel: 'Install Pregnancy Tracker',
+		additionalLinks: [
+			{ label: 'Install Coffee Recipe', url: 'https://trmnl.com/recipes/252053' },
+			{ label: 'Install TraktWastedTime', url: 'https://trmnl.com/recipes/252905' }
+		],
+		emoji: '🖥️',
+		category: 'PLUGINS',
 		bgColor: 'bg-[#EDE7F6]',
-		technologies: ['TRMNL', 'Trakt', 'E-Ink'],
-		tagColors: {
-			TRMNL: 'text-purple-500',
-			Trakt: 'text-red-500',
-			'E-Ink': 'text-gray-600'
-		}
+		technologies: ['TRMNL', 'E-Ink', 'Dashboard', 'Trakt']
 	}
 ];

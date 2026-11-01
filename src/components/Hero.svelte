@@ -87,7 +87,7 @@
 			<div class="mb-6 mt-16">
 				<h2 class="text-3xl font-bold text-white">More projects</h2>
 				<p class="mt-3 text-slate-400">
-					Chat analytics, e-ink experiments and an earlier automation project.
+					Chat analytics, e-ink plugins and an earlier automation project.
 				</p>
 			</div>
 			<div class="grid grid-cols-1 gap-5 md:grid-cols-2">

@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { projects, type Project } from './projects';
 
 describe('projects data', () => {
-	it('should have exactly 8 projects', () => {
-		expect(projects).toHaveLength(8);
+	it('should have exactly 6 project cards', () => {
+		expect(projects).toHaveLength(6);
 	});
 
 	it('should have all required fields for each project', () => {
