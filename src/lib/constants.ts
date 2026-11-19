@@ -34,7 +34,7 @@ export const SCROLL_THRESHOLD = 100;
 export const EXTERNAL_LINKS = {
 	github: 'https://github.com/JosemyDuarte',
 	linkedin: 'https://www.linkedin.com/in/josemyduarte/',
-	blog: 'https://josemyduarte.github.io/',
+	blog: 'https://blog.dute.dev/',
 	email: 'mailto:me@dute.dev',
 	resume: 'https://drive.google.com/file/d/1fqSuTNF9Ii-ImAOyJ-lrj3jQnpFMEH1S/view'
 } as const;
