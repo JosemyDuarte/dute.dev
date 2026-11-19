@@ -15,6 +15,12 @@
 		</a>
 		<nav aria-label="Primary" class="flex items-center gap-2 text-xs sm:gap-6 sm:text-base">
 			<a
+				href={EXTERNAL_LINKS.blog}
+				class="inline-flex min-h-11 items-center whitespace-nowrap font-semibold text-slate-700 underline-offset-4 hover:underline"
+			>
+				Blog
+			</a>
+			<a
 				href={EXTERNAL_LINKS.resume}
 				target="_blank"
 				rel="noopener noreferrer"
